@@ -1,0 +1,11 @@
+﻿Microsoft.EntityFrameworkCore
+
+Microsoft.EntityFrameworkCore.SqlServer
+
+Microsoft.EntityFrameworkCore.Tools
+
+Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+
+
+Scaffold-DbContext "Server=DESKTOP-B8K55JN;Database=DASDB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Data -force
+Scaffold-DbContext "Server=(localdb)\MSSQLLocalDB;Database=DemoDB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Data -force
