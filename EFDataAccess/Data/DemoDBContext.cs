@@ -15,7 +15,11 @@ namespace EFDataAccess.Data
         {
         }
 
+        public virtual DbSet<Address> Address { get; set; }
+        public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<Department> Department { get; set; }
+        public virtual DbSet<State> State { get; set; }
         public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -29,9 +33,45 @@ namespace EFDataAccess.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Address>(entity =>
+            {
+                entity.Property(e => e.HouseOfficeNo).HasMaxLength(100);
+
+                entity.Property(e => e.Street1).HasMaxLength(500);
+
+                entity.Property(e => e.Street2).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<City>(entity =>
+            {
+                entity.Property(e => e.CityId).ValueGeneratedNever();
+
+                entity.Property(e => e.CityName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Country>(entity =>
+            {
+                entity.Property(e => e.CountryId).ValueGeneratedNever();
+
+                entity.Property(e => e.CountryName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Department>(entity =>
             {
                 entity.Property(e => e.DepartmentName).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<State>(entity =>
+            {
+                entity.Property(e => e.StateId).ValueGeneratedNever();
+
+                entity.Property(e => e.StateName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<User>(entity =>

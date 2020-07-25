@@ -80,9 +80,7 @@ namespace CrudCore
             //-------------------------------------------------DI-----------------------------------------------
             //Services
             services.AddScoped<ICommonService, CommonService>();
-            //services.AddScoped<ICommonService, CommonService>();
-            //services.AddScoped<IEmployeeService, EmployeeService>();
-            //services.AddScoped<ICompanyDataService, CompanyDataService>();
+            services.AddScoped<IUserService, UserService>();
             //-------------------------------------------------DI END-------------------------------------------
 
 

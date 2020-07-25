@@ -10,6 +10,13 @@ namespace Infrastructure
 
         User GetUserByUserNamePassword(User user);
 
+        List<Country> GetAllCountries();
+        List<State> GetStatesByCountryId(int? countryId);
+        List<City> GetCityByStateId(int? stateId);
+        int SaveAddress(Address address);
+        Address GetAddressById(int? addressId);
+
+
 
     }
 }

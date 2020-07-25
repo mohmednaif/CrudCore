@@ -12,11 +12,12 @@ namespace EFDataAccess.Data
         public string Phone { get; set; }
         public DateTime? BirthDate { get; set; }
         public int? Gender { get; set; }
-        public string Address { get; set; }
+        public int? AddressId { get; set; }
         public int? DepartmentId { get; set; }
         public int? RoleId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public string ProfileImage { get; set; }
 
         public virtual Department Department { get; set; }
     }
